@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 
 # Create your models here.
@@ -67,5 +68,6 @@ class studentInfo(models.Model):
     briefDescription = models.TextField()
     
     
-    #class studentTicket(models.Model):
-        #ticket_number = models.
+    class studentTicket(models.Model):
+        ticket_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+        student_connect = models.ForeignKey('StudentInfo');
