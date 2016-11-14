@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, patterns
 from django.contrib import admin
 from AppTicket import views
+from MTicket import settings
 
 urlpatterns = patterns('',
     #url(r'^admin/', admin.site.urls),
