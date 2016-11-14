@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+    background-color: #0000FF;
+}
+
+input[type=text], select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display:inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[name=initial]{
+    width:8%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display:inline-block;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width:100;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin 8px 0;
+    border none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    background-color: #45a049;
+}
+
+input[type=reset] {
+    width:100;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin 8px 0;
+    border none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=reset]:hover{
+    background-color: #45a049;
+}
+
+select[id=residence]{
+    width:20%
+}
+
+input[id=rnumber]{
+    width:30%
+}
+
+select[id=occupancy]{
+    width:20%;
+}
+
+select[id=rank]{
+    width:20%;
+}
+div{
+    width:98%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding 20px;
+    margin: auto;
+    border: 2px solid black;
+    outline-color: black;
+}
+
+div.submit{
+    text-align:center;
+    outline-color: white;
+}
+
+div.title{
+    width:40%;
+    border-radius: 5px;
+    padding 20px;
+    margin:auto;
+}
+</style>
+
+<body>
+<div class="title">
+    <h3>ECSU MIF</h3>
+<div>
+    <form action="action_page.php">
+        <h2>Ticket Form</h2>
+        <h3>Section1:General</h3>
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" name="full name">
+
+        <label for="residence">Residence Hall & Room Number</label><br>
+        <select id="residence" name="residence">
+            <option value="Suites">Suites</option>
+            <option value="Tower">Tower</option>
+        </select>
+
+        <input type="text" id="rnumber" name="room number"><br>
+
+        <label for="occupancy">Occupancy</label><br>
+        <select id="occupancy" name="occupancy">
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+        </select><br>
+        
+        <h3>Section 2: Issue</h3>
+
+        <label for="Issue">What is your Issue With</label>
+        <select id="residence" name="residence">
+            <option value="Suites">Bed</option>
+            <option value="Tower">Bathroom</option>
+        </select>
+
+        <label for="rank">Please Rank Your Issue</label>
+        <select id="rank" name="rank">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+        </select>
+
+        <br>
+
+        <label for="disc">Briefly Describe your Issue Below</label>
+        <input type="text" id="disc" name="discription">
+
+        <label for="initial">Initial</label>
+        <input type="text" id="initial" name="initial">
+
+        <br>
+        <div class="submit">
+        <input type="reset" value="Cancel">
+        <input type="submit" value="Submit">
+        </div>
+    </form>
+    </div>
+</div>
+</body>
+</html>
+        

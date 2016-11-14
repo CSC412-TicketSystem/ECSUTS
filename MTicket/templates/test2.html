@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+</style>
+<head>
+	<title>Issue Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h1>Ticket Form</h1></div>
+    		<div class="panel-body">
+    			<!-- Issue form -->
+    			<form>
+    				<div class="form-group">
+    					<h3>Section 1: General Information</h3>
+    					<label for="f_name">Full Name</label>
+    					<input type="text" class="form-control" id="f_name" placeholder="Enter Full Name">
+    				</div>
+
+<!--     				<div class="form-group">
+    					<form action="">
+    						<label> Username:</label>
+    						<input type="text" name="usrname" required>
+    						<input type="submit"
+    					</form>
+    				</div> -->
+<!--     				Drop down menu for residence halls -->
+    				<div class="form-group">
+    					<label for="resid_hall">Residence Hall</label>
+    					<div>
+    						<select id="resid_hall" name="residence">
+    							<option class="disabled"value="select" disabled>Select</option>
+    							<option value="univ suites"> University Suites</option>
+    							<option value="univ towers">University Towers</option>
+    							<option value="vik towers">Viking Towers</option>
+    							<option value="vik village">Viking Village</option>
+    						</select>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="room_num">Room Number</label>
+    					<input type="text" class="form-control" id="room_num" placeholder="Enter Room #">
+    				</div>
+    				<!-- Radio for selecting room occupancy -->
+    				<div class="form-group">
+    					<label for="occupancy">Occupancy</label>
+						    <div class="radio">
+						      <label><input type="radio" name="optradio" id="single_op">Single</label>
+						    </div>
+						    <div class="radio">
+						      <label><input type="radio" name="optradio" id="double_op">Double</label>
+						    </div>
+    				</div>
+    				<!-- Drop down menu for selecting issue -->
+    				<div class="form-group">
+    					<h3>Section 2: Issue</h3>
+    					<label for="issues">What is your issue with?</label>
+    					<div>
+    						<select>
+    							<option class="disabled" value="select" disabled>Select</option>
+    							<option value="ac unit">AC Unit</option>
+    							<option value="bath-shower">Bathroom Shower</option>
+    							<option value="bath-toilet">Bathroom Toilet</option>
+    							<option value="bath-walls">Bathroom Walls</option>
+    							<option value="bed">Bed(s)</option>
+    							<option value="closet">Closet(s)</option>
+    							<option value="desk">Desk(s)</option>
+    							<option value="door">Door</option>
+    							<option value="dresser">Dresser</option>
+    							<option value="electric out">Electrical Outlet</option>
+    							<option value="floor">Floors</option>
+    							<option value="light">Lights</option>
+    							<option value="lock">Locks</option>
+    							<option value="mat">Mattress</option>
+    							<option value="mic-fridge">Micro-Fridge</option>
+    							<option value="mic-wave">Microwave</option>
+    							<option value="sink.mirror">Sink/Mirror</option>
+    							<option value="rm-walls">Room Walls</option>
+    							<option value="win">Window</option>
+    							<option value="win-blinds">Window Blinds</option>
+    						</select>
+    					</div>
+    				</div>
+    				<!-- Drop down menu for selecting issue priority -->
+    				<div class="form-group">
+    					<label for="rank_of_ticket">Rank your issue from 1 - 3 (1 = Low Priority/3 = High Priority</label>
+    					<div>
+    						<select>
+    							<option class="disabled" value="1" disabled>Select</option>
+    							<option value="1">1</option>
+    							<option value="2">2</option>
+    							<option value="3">3</option>
+    						</select>
+    					</div>
+    				</div>
+    				<!-- Section for user to describe issue -->
+    				<div class="form-group">
+    					<label for="comment">Briefly describe your issue below.</label>
+    					<textarea class="form-control" rows="5" id="brief_descrip" required></textarea>
+    				</div>
+    				<!-- User confirms everthing in form by initialing -->
+    				<div class="form-group">
+    					<label for="initial">Initial below to confirm your ticket</label>
+    					<input type="text" class="form-control" placeholder="Initial">
+    				</div>
+<!--     				<form action="demo_form.asp">
+  						Username: <input type="text" name="usrname" required>
+  						<input type="submit">
+					</form> -->
+    			</form>
+    				<div class="container">
+  						<!-- Trigger the modal with a button -->
+  						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit Issue</button>
+
+  						<!-- Modal -->
+  						<div class="modal fade" id="myModal" role="dialog">
+    						<div class="modal-dialog">
+    
+      							<!-- Modal content-->
+      							<div class="modal-content">
+        							<div class="modal-header">
+          								<button type="button" class="close" data-dismiss="modal">&times;</button>
+          								<h4 class="modal-title">Thank you for filing your issue with us!</h4>
+        							</div>
+        							<div class="modal-body">
+          								<p>Please wait for your Ticket # and updates on your issue.</p>
+        							</div>
+        							<div class="modal-footer">
+          								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        							</div>
+      							</div>
+      
+    						</div>
+  						</div>
+  
+					</div>
+
+    		</div>
+    	</div>
+	</div>		
+</body>
+
+</html>
