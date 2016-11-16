@@ -66,11 +66,14 @@ class studentInfo(models.Model):
     
     rankOfTicket = models.IntegerField()
     briefDescription = models.CharField(max_length=300)
+    studentEmail = models.EmailField(max_length=250, default='')
     
     def __str__(self):
-        return u'%s %s %s %s %s %s %s' % (self.first_name, self.last_name, self.resid_hall, self.room_num, self.occupancy, self.issues, self.rankOfTicket, self.briefDescription)
+        return u'%s %s %s %s %s %s %s %s %s' % (self.first_name, self.last_name, self.resid_hall, self.room_num, self.occupancy, self.issues, self.rankOfTicket, self.briefDescription, self.studentEmail)
     
     
     class studentTicket(models.Model):
         #ticket_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
         studentinfo = models.ForeignKey('studentInfo', on_delete=models.CASCADE);
+        
+        
