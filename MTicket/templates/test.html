@@ -14,40 +14,6 @@
   <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-alert.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!--script that will verify that the extension of a user's email address is "@students.ecsu.edu" -->
-  <script>
-    function validateForm(){
-      var x = document.forms["MaintEmail"][Email].value;
-      var atpos = x.indexOf("@");
-      var dotpos = x.lastIndexOf(".")
-      if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
-        alert("Not a valid e-mail address");
-        return false;
-      }
-      var vemail = x.slice(atpos+1);
-      var allowedDomains = ['students.ecsu.edu'];
-      if (vemail == allowedDomains)
-      {
-        alert(x + ' is allowed');
-      }
-      else
-      {
-        alert(x + ' is not a valid email');
-        return false;
-      }
-    }
-  </script>
-
-  <!-- function for creating the pop-up alert once submit button is clicked -->
-  <script type="text/javascript">
-  $(document).ready(function () {
-
-  $('#info').click(function (e) {
-    e.preventDefault()
-    $('#message').html('<div class="alert alert-info fade in col-sm-offset-1 col-sm-5 "><button type="button" class="close close-alert" data-dismiss="alert" aria-hidden="true">×</button><center>Thank you! Please check your ECSU email for a message from us!<center></div>');
-  })
-  });
-  </script>
 
 
 </head>
@@ -71,8 +37,15 @@
       <!-- body of panel for email  -->
         <div class="panel-body">
           <div class="form-group">
-            <label for="email"></label>
-            <input type="email" class="form-control" id="email" placeholder="Enter ECSU email">
+          <!--  <label for="email"></label>
+	  <input type="email" class="form-control" id="email" placeholder="Enter ECSU email"> -->
+            
+	    <div align="center"> 
+          <form role="form" action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            </div>
+
           </div>
         </div>
 
@@ -89,10 +62,15 @@
       </center>
 
         
-      <!-- Trigger the modal with a button -->
-      <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Next</button></center>
-
-      <!-- Modal -->
+      <!-- Trigger the modal with a button 
+      <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Next</button></center> -->
+           
+            <div align="center">
+              <br><input type="submit" value="SUBMIT">
+              </div>
+              
+              <!-- Modal -->
+    
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
@@ -100,7 +78,7 @@
 
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" data-dismiss="modal">&times;</button> 
             <h4 class="modal-title">Thank you!</h4>
           </div>
           <div class="modal-body">

@@ -13,8 +13,8 @@ def email(request):
 
         if form.is_valid():
             to_email = form.cleaned_data['ECSU_email']
-            subject = 'Testin'
-            message = 'Fill out the form at 127.0.0.1:8000/Contact'
+            subject = 'ECSU Maintanence Ticket System'
+            message = 'Dear Student, Welcome to ECSU Maintenance Ticket System.  In order to begin filing your maintenance issue, please copy and paste the URL into your web browser.  127.0.0.1:8000/Contact'
             email = 'ECSU_Maintenance@ecsu.edu'
 
             if '@' in to_email and not to_email.endswith('@students.ecsu.edu'):
@@ -33,4 +33,4 @@ def thanks(request):
     return HttpResponse('Check Your Email')
 
 def Contact(request):
-    return render(request, 'DanielForm.html')
+    return render(request, 'test2.html')
