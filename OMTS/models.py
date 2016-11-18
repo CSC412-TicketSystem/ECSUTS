@@ -10,7 +10,7 @@ from django.db import models
 class studentInfo(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
-    resid_hall = models.TextField()
+    resid_hall = models.CharField(max_length = 200)
     room_num = models.CharField(max_length=10)
     occupancy = models.CharField(max_length=1)
     
@@ -64,10 +64,16 @@ class studentInfo(models.Model):
         default=BED
     )
     
-    rankOfTicket = models.CharField(max_length=1)
-    briefDescription = models.TextField()
+    rankOfTicket = models.IntegerField()
+    briefDescription = models.CharField(max_length=300)
+    studentEmail = models.EmailField(max_length=250, default='')
+    
+    def __str__(self):
+        return u'%s %s %s %s %s %s %s %s %s' % (self.first_name, self.last_name, self.resid_hall, self.room_num, self.occupancy, self.issues, self.rankOfTicket, self.briefDescription, self.studentEmail)
     
     
     class studentTicket(models.Model):
-        ticket_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-        student_connect = models.ForeignKey('StudentInfo');
+        #ticket_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+        studentinfo = models.ForeignKey('studentInfo', on_delete=models.CASCADE);
+        
+        
