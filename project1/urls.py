@@ -22,5 +22,6 @@ from OMTS import views
 app_name = 'OMTS'
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
+    #url(r'^$', views.index, name='index'), <- old one
+    url(r'^$', views.email, name='email'),
 ]
