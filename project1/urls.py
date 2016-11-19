@@ -24,4 +24,5 @@ urlpatterns = [
     #url(r'^admin/', admin.site.urls),
     #url(r'^$', views.index, name='index'), <- old one
     url(r'^$', views.email, name='email'),
+    url(r'^Contact/$', views.Contact, name='Contact'),
 ]
