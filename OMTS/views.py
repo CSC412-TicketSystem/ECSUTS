@@ -87,7 +87,7 @@ def Contact(request):
             
            
             student_Info = studentInfo(name, resid_hall, room_num, occupancy, issues, rankOfTicket, briefDescription)
-            student_Info.save()
+            s = student_Info.save()
             
            
             #if BadHeaderError:
@@ -96,4 +96,4 @@ def Contact(request):
 
             
         ###########################################
-    return render(request, 'OMTS/jtest2.html', {'form':form,})
+    return render(request, 'OMTS/test2.html', {'form':form,})

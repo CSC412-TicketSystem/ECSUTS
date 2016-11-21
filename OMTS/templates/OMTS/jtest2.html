@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load widget_tweaks %}
+    
 <style>
 
 </style>
@@ -21,26 +21,17 @@
     			<form>
     				<div class="form-group">
                         {% csrf_token %}
+                        {{ form }}
                         
-                        {% for hidden in form.hidden_fields %}
-                            {{ hidden }}
-                        {% endfor %}
-                        
-                        {% for field in form.visible_fields %}
+                       <!--
     					<h3>Section 1: General Information</h3>
                         <label for="{{full_Name.id_for_label}}">Full Name</label>
-    					<!-- <label for="f_name">Full Name</label> -->
-                        {{ full_Name|add_class:'form-control'}}
+    					<label for="f_name">Full Name</label>
     					<input type="text" class="form-control" id="f_name" placeholder="Enter Full Name"> 
-                        <!--{{ form.full_Name}}-->
+                        {{ form.full_Name}}-->
     				</div>
-                    {% endfor %}
                     
-                    <div class="form-group">
-                        
-                        {% for hidden in form.hidden_fields %}
-                            {{ hidden }}
-                        {% endfor %}
+                   <!-- <div class="form-group">
                         
     					 <label for="{{Residence_hall.id_for_label}}">Residence Hall</label> 
     					<div>
@@ -52,8 +43,7 @@
     							<option value="vik village">Viking Village</option>
     						</select>
     					</div>
-                        <!--{{ form.Residence_Hall }}-->
-    				</div>
+    				</div> -->
                     
     			</form>
     				<div class="container">
