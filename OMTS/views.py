@@ -17,7 +17,7 @@
 from django.shortcuts import render, redirect, render_to_response
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-from OMTS.forms import ContactForm #emailStudent
+from OMTS.forms import ContactForm, studentIssueForm
 from django.template import RequestContext
 from django.utils import timezone
 from .models import studentInfo #studentTicket
@@ -43,7 +43,7 @@ def email(request):
             #model_instance.timestamp = timezone.now()
             #model_instance.save()
             
-            student_email = studentInfo (studentEmail = str_to_email)
+            student_email = studentInfo(studentEmail = str_to_email)
             student_email.save()
             ###########################################
             
@@ -64,5 +64,36 @@ def email(request):
 def thanks(request):
     return HttpResponse('Check Your Email')
 
+
 def Contact(request):
+     ############### new code #################
+    if request.method == 'GET':
+        #form = emailStudent()
+        form = studentIssueForm()
+    else:
+        form = studentIssueForm(request.POST)
+
+        if form.is_valid():
+            name = form.cleaned_data['student_name']
+            resid_hall = form.cleaned_data['resid_hall']
+            room_num = form.cleaned_data['room_num']
+            occupancy = form.cleaned_data['occupancy']
+            issues = form.cleaned_data['issues']
+            rankOfTicket = form.cleaned_data['rankOfTicket']
+            briefDescription = form.cleaned_data['briefDescription']
+            
+            
+            #str_to_name = str(name)
+            
+           
+            student_Info = studentInfo(name, resid_hall, room_num, occupancy, issues, rankOfTicket, briefDescription)
+            student_Info.save()
+            
+           
+            #if BadHeaderError:
+
+                #return HttpResponse('Invalid Header found.')
+
+            
+        ###########################################
     return render(request, 'OMTS/test2.html')

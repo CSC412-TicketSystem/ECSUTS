@@ -81,7 +81,8 @@ class studentInfo(models.Model):
         default=''
     )
     
-    rankOfTicket = models.IntegerField(null=True)
+    #rankOfTicket = models.IntegerField(null=True)
+    rankOfTicket = models.CharField(max_length=1, default='')
     briefDescription = models.CharField(max_length=300)
     studentEmail = models.EmailField(max_length=250, default='')
     
