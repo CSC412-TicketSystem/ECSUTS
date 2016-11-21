@@ -11,10 +11,18 @@ class ContactForm(forms.Form):
             #model = studentInfo
             #fields = ['studentEmail']
         
-class studentIssueForm(ModelForm):
+class studentIssueForm(forms.Form):
+    #full_Name = forms.CharField(max_length=150)
+    
     class Meta: 
         model = studentInfo
         exclude = ['studentEmail']
+        widgets = {
+            'residence_Hall':forms.Select(),
+            'occupancy':forms.RadioSelect(),
+            'issues':forms.Select(),
+            'rank_Of_Ticket':forms.Select(),
+        }
     
     
     

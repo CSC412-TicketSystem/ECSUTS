@@ -22,14 +22,20 @@ class studentInfo(models.Model):
         (VIKING_VILLAGE, 'Viking Village'),
     )
     
-    resid_hall = models.CharField(
+    Residence_Hall = models.CharField(
         max_length = 12,
         choices=RESID_CHOICES,
         default=''
         )
     
-    room_num = models.CharField(max_length=10)
-    occupancy = models.CharField(max_length=6)
+    room_Number = models.CharField(max_length=10)
+    
+    occupant = (
+        ('single', 'Single'),
+        ('double', 'Double'),
+    )
+    
+    occupancy = models.CharField(max_length=10, choices=occupant)
     
     BED = 'BD'
     DESK = 'DSK'
@@ -82,8 +88,8 @@ class studentInfo(models.Model):
     )
     
     #rankOfTicket = models.IntegerField(null=True)
-    rankOfTicket = models.CharField(max_length=1, default='')
-    briefDescription = models.CharField(max_length=300)
+    rank_Of_Ticket = models.CharField(max_length=1, default='')
+    brief_Description = models.CharField(max_length=300)
     studentEmail = models.EmailField(max_length=250, default='')
     
     def __str__(self):

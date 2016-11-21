@@ -96,4 +96,4 @@ def Contact(request):
 
             
         ###########################################
-    return render(request, 'OMTS/test2.html')
+    return render(request, 'OMTS/jtest2.html', {'form':form,})

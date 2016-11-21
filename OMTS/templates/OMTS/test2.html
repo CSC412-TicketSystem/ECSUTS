@@ -19,11 +19,18 @@
     			<!-- Issue form -->
     			<form>
     				<div class="form-group">
+                         
+                        <!--{% csrf_token %}-->
+                        
+                        
     					<h3>Section 1: General Information</h3>
+                        <!--<label for="{{ form.student_name.id_for_label }}">Full Name</label>-->
     					<label for="f_name">Full Name</label>
-    					<input type="text" class="form-control" id="f_name" placeholder="Enter Full Name">
+    					<input type="text" class="form-control" id="f_name" placeholder="Enter Full Name"> 
+                        <!--{{ form.student_name }}-->
     				</div>
-
+                    
+                    
 <!--     				<div class="form-group">
     					<form action="">
     						<label> Username:</label>
@@ -33,7 +40,8 @@
     				</div> -->
 <!--     				Drop down menu for residence halls -->
     				<div class="form-group">
-    					<label for="resid_hall">Residence Hall</label>
+                        <!--<label for="{{ form.Residence_Hall.id_for_label }}">Residence Hall</label>-->
+    					 <label for="resid_hall">Residence Hall</label> 
     					<div>
     						<select id="resid_hall" name="residence">
     							<option class="disabled"value="select" disabled>Select</option>
@@ -43,20 +51,29 @@
     							<option value="vik village">Viking Village</option>
     						</select>
     					</div>
+                        <!--{{ form.Residence_Hall }}-->
     				</div>
     				<div class="form-group">
-    					<label for="room_num">Room Number</label>
+    					<!--<label for="{{ form.room_Number.id_for_label }}">Room Number</label>-->
     					<input type="text" class="form-control" id="room_num" placeholder="Enter Room #">
+                        <!--{{ form.room_Number }}-->
     				</div>
     				<!-- Radio for selecting room occupancy -->
     				<div class="form-group">
-    					<label for="occupancy">Occupancy</label>
+    					<!--<label for="{{ form.occupancy.id_for_label }}">Occupancy</label>-->
 						    <div class="radio">
 						      <label><input type="radio" name="optradio" id="single_op">Single</label>
 						    </div>
 						    <div class="radio">
 						      <label><input type="radio" name="optradio" id="double_op">Double</label>
-						    </div>
+                        </div>
+                            <!--{% for option in form.occupancy %}
+                            <div class = "radio">
+                                {{ option }}
+                            </div>
+                            {% endfor %}
+                        
+                        {{ form.occupancy }}-->
     				</div>
     				<!-- Drop down menu for selecting issue -->
     				<div class="form-group">

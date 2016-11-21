@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load widget_tweaks %}
+<style>
+
+</style>
+<head>
+	<title>Issue Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h1>Ticket Form</h1></div>
+    		<div class="panel-body">
+    			<!-- Issue form -->
+    			<form>
+    				<div class="form-group">
+                        {% csrf_token %}
+                        
+                        {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                        {% endfor %}
+                        
+                        {% for field in form.visible_fields %}
+    					<h3>Section 1: General Information</h3>
+                        <label for="{{full_Name.id_for_label}}">Full Name</label>
+    					<!-- <label for="f_name">Full Name</label> -->
+                        {{ full_Name|add_class:'form-control'}}
+    					<input type="text" class="form-control" id="f_name" placeholder="Enter Full Name"> 
+                        <!--{{ form.full_Name}}-->
+    				</div>
+                    {% endfor %}
+                    
+                    <div class="form-group">
+                        
+                        {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                        {% endfor %}
+                        
+    					 <label for="{{Residence_hall.id_for_label}}">Residence Hall</label> 
+    					<div>
+    						<select id="{{Residence_hall.id_for_label}}" name="residence">
+    							<option class="disabled"value="select" disabled>Select</option>
+    							<option value="univ suites"> University Suites</option>
+    							<option value="univ towers">University Towers</option>
+    							<option value="vik towers">Viking Towers</option>
+    							<option value="vik village">Viking Village</option>
+    						</select>
+    					</div>
+                        <!--{{ form.Residence_Hall }}-->
+    				</div>
+                    
+    			</form>
+    				<div class="container">
+  						<!-- Trigger the modal with a button -->
+  						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit Issue</button>
+
+  						<!-- Modal -->
+  						<div class="modal fade" id="myModal" role="dialog">
+    						<div class="modal-dialog">
+    
+      							<!-- Modal content-->
+      							<div class="modal-content">
+        							<div class="modal-header">
+          								<button type="button" class="close" data-dismiss="modal">&times;</button>
+          								<h4 class="modal-title">Thank you for filing your issue with us!</h4>
+        							</div>
+        							<div class="modal-body">
+          								<p>Please wait for your Ticket # and updates on your issue.</p>
+        							</div>
+        							<div class="modal-footer">
+          								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        							</div>
+      							</div>
+      
+    						</div>
+  						</div>
+  
+					</div>
+
+    		</div>
+    	</div>
+	</div>		
+</body>
+
+</html>
