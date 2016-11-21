@@ -8,11 +8,28 @@ from django.db import models
 # 2) student_ticket => will create a student ticket number
 
 class studentInfo(models.Model):
-    first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
-    resid_hall = models.CharField(max_length = 200)
+    student_name = models.CharField(max_length=150)
+    
+    UNIVERSITY_SUITES = 'US'
+    UNIVERSITY_TOWERS = 'UT'
+    VIKING_TOWERS = 'VT'
+    VIKING_VILLAGE = 'VV'
+    
+    RESID_CHOICES = (
+        (UNIVERSITY_SUITES, 'University Suites'),
+        (UNIVERSITY_TOWERS, 'University Towers'),
+        (VIKING_TOWERS, 'Viking Towers'),
+        (VIKING_VILLAGE, 'Viking Village'),
+    )
+    
+    resid_hall = models.CharField(
+        max_length = 12,
+        choices=RESID_CHOICES,
+        default=''
+        )
+    
     room_num = models.CharField(max_length=10)
-    occupancy = models.CharField(max_length=1)
+    occupancy = models.CharField(max_length=6)
     
     BED = 'BD'
     DESK = 'DSK'
@@ -61,10 +78,10 @@ class studentInfo(models.Model):
     issues = models.CharField(
         max_length=12,
         choices=ISSUES_CHOICES, 
-        default=BED
+        default=''
     )
     
-    rankOfTicket = models.IntegerField()
+    rankOfTicket = models.IntegerField(null=True)
     briefDescription = models.CharField(max_length=300)
     studentEmail = models.EmailField(max_length=250, default='')
     

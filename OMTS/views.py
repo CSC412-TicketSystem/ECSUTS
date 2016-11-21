@@ -17,9 +17,10 @@
 from django.shortcuts import render, redirect, render_to_response
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-from OMTS.forms import ContactForm, emailStudent
+from OMTS.forms import ContactForm #emailStudent
 from django.template import RequestContext
 from django.utils import timezone
+from .models import studentInfo #studentTicket
 
 # Create your views here.
 def email(request):
@@ -37,10 +38,13 @@ def email(request):
             email = 'ecsumaintenancesystem@gmail.com'
             
             ############### new code #################
-            newForm = emailStudent(request.POST)
-            model_instance = newForm.save(commit=False)
-            model_instance.timestamp = timezone.now()
-            model_instance.save()
+            #newForm = emailStudent(request.POST)
+            #model_instance = form.save(commit=False)
+            #model_instance.timestamp = timezone.now()
+            #model_instance.save()
+            
+            student_email = studentInfo (studentEmail = str_to_email)
+            student_email.save()
             ###########################################
             
             if '@' in to_email and not to_email.endswith('@students.ecsu.edu'):
