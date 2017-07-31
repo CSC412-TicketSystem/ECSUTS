@@ -19,7 +19,7 @@
 
 3. To deactivate conda virtual environment: `source deactivate (name_of_virtual_environment)`
 
-##Launching Webserver via MAMP
+## Launching Webserver via MAMP
 1. Launch the MAMP application and click on start server
 
 2. (keep this connection on for the next part) Click on Open Webstart page
