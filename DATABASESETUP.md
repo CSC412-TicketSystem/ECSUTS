@@ -1,6 +1,6 @@
-#Documentation for Connecting Django with MySQL database (using Anaconda & MAMP/LAMP)
+# Documentation for Connecting Django with MySQL database (using Anaconda & MAMP/LAMP)
 
-##Installing Dependencies
+## Installing Dependencies
 1. Install the latest-stable version of Python (https://www.python.org/downloads/)
 
 2. Install Anaconda (https://www.continuum.io/downloads) (because you are using anaconda, you don't have to use virutalenv or virtualenvwrapper)
@@ -12,7 +12,7 @@
   
 5. Install mysqlclient (https://github.com/PyMySQL/mysqlclient-python)
   
-##Creating Anaconda Environment
+## Creating Anaconda Environment
 1. Create Conda virtual environment: `create conda -n (name_of_virtual_environment) python=(version) anaconda`
 
 2. To activate conda virtual environment: `source activate (name_of_virtual_environment)`
@@ -27,7 +27,7 @@
 3. At the top tool bar click tools and then phpmyAdmin and there you will see the databases in phpAdmin. 
   * You can alter database information as well as query using phpmyAdmin or use WYSIWYG like mysql workbench or sequel pro (for Mac)
 
-##Editing settings.py in Django project
+## Editing settings.py in Django project
 1. (while in conda environment) Create a Django project: `django-admin startproject projectname`
 
 2. Go to your project's settings.py file which would be located in: `/projectname/projectname/settings.py`
